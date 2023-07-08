@@ -1,11 +1,14 @@
 import time
 
-from langchain import PromptTemplate, LLMChain
-from langchain.llms import OpenLLM
+from langchain import PromptTemplate, LLMChain, HuggingFacePipeline
 
-server_url = "http://localhost:3000"
+import torch
+from transformers import pipeline
 
-llm = OpenLLM(server_url=server_url)
+generate_text = pipeline(model="databricks/dolly-v2-3b", torch_dtype=torch.bfloat16,
+                         trust_remote_code=True, device_map="auto", return_full_text=True)
+
+llm = HuggingFacePipeline(pipeline=generate_text)
 
 principles = [
     "You are an aspiring influencer",
