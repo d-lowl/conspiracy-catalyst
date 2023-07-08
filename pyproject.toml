@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "expansion"
+version = "0.1.0"
+description = ""
+authors = ["D. Lowl <d.lowl@d-lowl.space>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.0.227"
+openllm = "^0.1.20"
+torch = "2.0.1+cpu"
+
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "default"
+
+
+[[tool.poetry.source]]
+name = "torchcpu"
+url = "https://download.pytorch.org/whl/cpu"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
