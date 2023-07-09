@@ -7,6 +7,7 @@ from loguru import logger
 
 import socketio
 from sanic import Sanic
+from sanic_cors import CORS
 
 from expansion.game import Game
 
@@ -19,6 +20,7 @@ sio = socketio.AsyncServer(async_mode="sanic")
 app = Sanic(name="cblit")
 app.static("/", os.path.join(static_path, "index.html"), name="game")
 app.static("/static/", static_path, name="statics")
+CORS(app)
 sio.attach(app)
 
 
