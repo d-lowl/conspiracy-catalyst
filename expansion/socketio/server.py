@@ -20,7 +20,7 @@ sio = socketio.AsyncServer(async_mode="sanic", cors_allowed_origins="*")
 app = Sanic(name="cblit")
 app.static("/", os.path.join(static_path, "index.html"), name="game")
 app.static("/static/", static_path, name="statics")
-CORS(app, resources={r"*": {"origins": "*"}})
+# CORS(app, resources={r"*": {"origins": "*"}})
 sio.attach(app)
 
 
