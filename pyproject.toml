@@ -16,6 +16,7 @@ vadersentiment = "^3.3.2"
 loguru = "^0.7.0"
 python-socketio = "^5.8.0"
 sanic = "^23.3.0"
+sanic-cors = "^2.2.0"
 
 
 [[tool.poetry.source]]
