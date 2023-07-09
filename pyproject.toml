@@ -12,6 +12,10 @@ torch = "2.0.1+cpu"
 exceptiongroup = "^1.1.2"
 transformers = "^4.30.2"
 accelerate = "^0.20.3"
+vadersentiment = "^3.3.2"
+loguru = "^0.7.0"
+python-socketio = "^5.8.0"
+sanic = "^23.3.0"
 
 
 [[tool.poetry.source]]
