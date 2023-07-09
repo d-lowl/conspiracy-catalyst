@@ -15,7 +15,7 @@ static_path = os.path.join(os.path.dirname(__file__), "static")
 
 games: dict[str, Game] = {}
 
-sio = socketio.AsyncServer(async_mode="sanic")
+sio = socketio.AsyncServer(async_mode="sanic", cors_allowed_origins="*")
 
 app = Sanic(name="cblit")
 app.static("/", os.path.join(static_path, "index.html"), name="game")
